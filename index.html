@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Zineb Store - Official</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:'Cairo', sans-serif;
+    background: linear-gradient(135deg,#4facfe,#00f2fe);
+    color:white;
+    display:flex;
+    justify-content:center;
+    padding:20px;
+    min-height:100vh;
+}
+
+.container{
+    max-width:420px;
+    width:100%;
+    background:rgba(0,0,0,0.65);
+    border-radius:25px;
+    padding:20px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.4);
+}
+
+/* الصورة الكبيرة */
+.profile-img{
+    width:25vw;
+    max-width:120px;
+    height:25vw;
+    max-height:120px;
+    display:block;
+    margin:0 auto 15px auto;
+    border-radius:10px;
+    object-fit:cover;
+    border:3px solid #fff;
+}
+
+/* العنوان */
+h1{
+    text-align:center;
+    font-size:6vw;
+}
+
+.subtitle{
+    text-align:center;
+    opacity:0.8;
+    margin-bottom:20px;
+    font-size:4vw;
+}
+
+/* زر عني مع صورة صغيرة */
+.about-btn{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    width:fit-content;
+    padding:10px 15px;
+    background:white;
+    color:#333;
+    border-radius:12px;
+    margin:0 auto 20px auto;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:4vw;
+}
+
+.about-btn img{
+    width:7vw;
+    max-width:30px;
+    height:7vw;
+    max-height:30px;
+    object-fit:cover;
+    border-radius:5px;
+}
+
+/* روابط التواصل */
+.btn{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
+    background:white;
+    color:#333;
+    padding:12px;
+    margin:10px 0;
+    border-radius:15px;
+    font-size:4vw;
+}
+
+.btn img{
+    width:7vw;
+    max-width:35px;
+    height:7vw;
+    max-height:35px;
+}
+
+/* أيقونة قناة واتساب مميزة */
+.channel-btn{
+    background:#25D366;
+    color:white;
+}
+
+/* قسم عني */
+#about{
+    margin-top:30px;
+    padding-top:20px;
+    border-top:2px solid rgba(255,255,255,0.2);
+}
+
+.about-box{
+    background:rgba(255,255,255,0.1);
+    padding:20px;
+    border-radius:20px;
+    text-align:right;
+}
+
+.about-box h2{
+    text-align:center;
+    margin-bottom:10px;
+    font-size:5vw;
+}
+
+.about-box p{
+    line-height:1.6;
+    font-size:4vw;
+}
+
+.services li{
+    margin:6px 0;
+    font-size:4vw;
+}
+
+footer{
+    text-align:center;
+    margin-top:20px;
+    opacity:0.7;
+    font-size:3vw;
+}
+
+/* تحسين تجربة على شاشات كبيرة */
+@media(min-width:600px){
+    .subtitle{font-size:18px;}
+    h1{font-size:24px;}
+    .about-btn{font-size:16px;}
+    .btn{font-size:16px;}
+    .about-box h2{font-size:20px;}
+    .about-box p, .services li{font-size:16px;}
+    footer{font-size:14px;}
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- الصورة الكبيرة -->
+    <img src="65.jpeg" alt="Zineb Store" class="profile-img">
+
+    <!-- العنوان -->
+    <h1>Zineb Store</h1>
+    <p class="subtitle">مرحبا 👋</p>
+
+    <!-- زر عني مع صورة صغيرة -->
+    <a href="#about" class="about-btn">
+        <img src="65.jpeg" alt="صورة عني">
+        عني
+    </a>
+
+    <!-- روابط التواصل -->
+    <a class="btn link" href="https://www.facebook.com/share/1DJAqDafNk/?mibextid=wwXIfr" target="_blank">
+        <img src="13.webp">
+        فيسبوك
+    </a>
+
+    <a class="btn link" href="https://www.tiktok.com/@zineb.store.ff?_r=1&_t=ZS-93cz317Vztt" target="_blank">
+        <img src="t.png">
+        تيك توك
+    </a>
+
+    <a class="btn link" href="https://wa.me/213563143913?text=مرحبا،%20حاب%20نستفسر%20على%20منتجاتكم" target="_blank">
+        <img src="8.webp">
+        واتساب
+    </a>
+
+    <a class="btn link channel-btn" href="https://whatsapp.com/channel/0029VbBstWcAYlUMf4DJEH3Z" target="_blank">
+        <img src="8.webp">
+        Suivre la chaîne 𝙕𝙞𝙣𝙚𝙚𝙚𝙗 𝙨𝙩𝙤𝙧𝙚 🛍️🛒
+    </a>
+
+    <a class="btn link" href="https://www.instagram.com/z.ineeb.store?igsh=MXE5NWMwYWRwNDFzZQ==" target="_blank">
+        <img src="14.jpg">
+        انستقرام
+    </a>
+
+    <!-- قسم عني -->
+    <section id="about">
+        <div class="about-box">
+            <h2>نبذة عني</h2>
+            <p>
+                مرحبا 👋  
+                أنا صاحبة متجر <b>Zineb Store</b>، أقدّم خدمات رقمية باحترافية.
+            </p>
+            <h3>💼 خدماتي:</h3>
+            <ul class="services">
+                <li>✅ بيع وشراء جميع الحسابات</li>
+                <li>✅ شحن جميع الألعاب</li>
+                <li>✅ خدمة رقمية موثوقة</li>
+                <li>✅ دعم سريع عبر الواتساب</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        © 2026 Zineb Store - All Rights Reserved
+    </footer>
+
+</div>
+
+</body>
+</html>
