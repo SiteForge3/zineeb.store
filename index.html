@@ -2,229 +2,348 @@
 <html lang="ar">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Zineb Store - Official</title>
 
+<!-- خطوط جوجل الحديثة -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700;800;900&display=swap" rel="stylesheet">
+
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
-
-*{
-    box-sizing: border-box;
-    margin:0;
-    padding:0;
+:root {
+  --bg-color: #09090b;
+  --card-bg: rgba(255, 255, 255, 0.08);
+  --text-white: #ffffff;
+  --text-gray: #a1a1aa;
+  --accent-gold: #fbbf24;
+  --wa-color: #25D366;
+  --insta-color: #E4405F;
+  --fb-color: #1877F2;
+  --tt-color: #EE1D52;
 }
 
-body{
-    font-family:'Cairo', sans-serif;
-    background: linear-gradient(135deg,#4facfe,#00f2fe);
-    color:white;
-    display:flex;
-    justify-content:center;
-    padding:20px;
-    min-height:100vh;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.container{
-    max-width:420px;
-    width:100%;
-    background:rgba(0,0,0,0.65);
-    border-radius:25px;
-    padding:20px;
-    box-shadow:0 15px 40px rgba(0,0,0,0.4);
+body {
+  font-family: 'Almarai', sans-serif;
+  background-color: var(--bg-color);
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(251, 191, 36, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 100% 100%, rgba(168, 85, 247, 0.1) 0%, transparent 50%);
+  color: var(--text-white);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* للسماح بالتمرير إذا لزم الأمر */
+  padding: 20px;
 }
 
-/* الصورة الكبيرة */
-.profile-img{
-    width:25vw;
-    max-width:120px;
-    height:25vw;
-    max-height:120px;
-    display:block;
-    margin:0 auto 15px auto;
-    border-radius:10px;
-    object-fit:cover;
-    border:3px solid #fff;
+/* الحاوية الرئيسية */
+.main-container {
+  width: 100%;
+  max-width: 450px; /* مناسب جداً للموبايل والتابلت */
+  position: relative;
+  z-index: 10;
 }
 
-/* العنوان */
-h1{
-    text-align:center;
-    font-size:6vw;
+/* --- الهيدر --- */
+.store-header {
+  text-align: center;
+  margin-bottom: 25px;
+  padding-top: 20px;
 }
 
-.subtitle{
-    text-align:center;
-    opacity:0.8;
-    margin-bottom:20px;
-    font-size:4vw;
+.logo-wrapper {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 15px;
+  background: linear-gradient(135deg, var(--accent-gold), #f59e0b);
+  padding: 3px;
+  border-radius: 28px;
+  box-shadow: 0 10px 30px rgba(251, 191, 36, 0.3);
+  animation: float 3s ease-in-out infinite;
 }
 
-/* زر عني مع صورة صغيرة */
-.about-btn{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    width:fit-content;
-    padding:10px 15px;
-    background:white;
-    color:#333;
-    border-radius:12px;
-    margin:0 auto 20px auto;
-    text-decoration:none;
-    font-weight:bold;
-    font-size:4vw;
+.profile-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
+  object-fit: cover;
+  border: 2px solid var(--bg-color);
 }
 
-.about-btn img{
-    width:7vw;
-    max-width:30px;
-    height:7vw;
-    max-height:30px;
-    object-fit:cover;
-    border-radius:5px;
+h1 {
+  font-size: 28px;
+  font-weight: 900;
+  margin-bottom: 5px;
+  background: linear-gradient(to right, #fff, #d1d5db);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* روابط التواصل */
-.btn{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    text-decoration:none;
-    background:white;
-    color:#333;
-    padding:12px;
-    margin:10px 0;
-    border-radius:15px;
-    font-size:4vw;
+.bio {
+  font-size: 14px;
+  color: var(--text-gray);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,0.05);
+  padding: 5px 15px;
+  border-radius: 20px;
 }
 
-.btn img{
-    width:7vw;
-    max-width:35px;
-    height:7vw;
-    max-height:35px;
+/* --- قسم المنتجات (قناه واتساب) --- */
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  color: var(--text-gray);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-/* أيقونة قناة واتساب مميزة */
-.channel-btn{
-    background:#25D366;
-    color:white;
+.grid-services {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-bottom: 30px;
 }
 
-/* قسم عني */
-#about{
-    margin-top:30px;
-    padding-top:20px;
-    border-top:2px solid rgba(255,255,255,0.2);
+.service-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 25px 15px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--text-white);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.about-box{
-    background:rgba(255,255,255,0.1);
-    padding:20px;
-    border-radius:20px;
-    text-align:right;
+.service-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+  border-color: var(--accent-gold);
 }
 
-.about-box h2{
-    text-align:center;
-    margin-bottom:10px;
-    font-size:5vw;
+.icon-box {
+  font-size: 35px;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 0 10px rgba(255,255,255,0.2));
 }
 
-.about-box p{
-    line-height:1.6;
-    font-size:4vw;
+.srv-title { font-size: 16px; font-weight: 800; }
+.srv-sub { font-size: 11px; color: var(--accent-gold); margin-top: 4px; }
+
+/* --- قسم السوشيال ميديا (الوسط) --- */
+.social-container {
+  margin-bottom: 30px;
 }
 
-.services li{
-    margin:6px 0;
-    font-size:4vw;
+.social-grid-center {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
-footer{
-    text-align:center;
-    margin-top:20px;
-    opacity:0.7;
-    font-size:3vw;
+.social-btn-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-/* تحسين تجربة على شاشات كبيرة */
-@media(min-width:600px){
-    .subtitle{font-size:18px;}
-    h1{font-size:24px;}
-    .about-btn{font-size:16px;}
-    .btn{font-size:16px;}
-    .about-box h2{font-size:20px;}
-    .about-box p, .services li{font-size:16px;}
-    footer{font-size:14px;}
+.social-btn-circle::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: currentColor;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.social-btn-circle:hover::before { opacity: 0.1; }
+.social-btn-circle:hover { transform: scale(1.1); border-color: currentColor; }
+
+.social-btn-circle img {
+  width: 26px;
+  height: 26px;
+  z-index: 2;
+  transition: 0.3s;
+}
+
+/* ألوان الماركات */
+.btn-wa { color: var(--wa-color); border-color: rgba(37, 211, 102, 0.3); }
+.btn-fb { color: var(--fb-color); border-color: rgba(24, 119, 242, 0.3); }
+.btn-tt { color: var(--tt-color); border-color: rgba(238, 29, 82, 0.3); }
+.btn-insta { color: var(--insta-color); border-color: rgba(228, 64, 95, 0.3); }
+
+/* --- زر قناة الواتساب --- */
+.btn-channel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(90deg, #128C7E, #25D366);
+  color: white;
+  padding: 16px;
+  border-radius: 16px;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 16px;
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-channel:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
+}
+
+/* --- الفوتر --- */
+.footer-info {
+  margin-top: 30px;
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  padding-top: 20px;
+}
+
+.footer-info p {
+  color: var(--text-gray);
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.footer-logo {
+  font-weight: 900;
+  color: white;
+  font-size: 14px;
+}
+
+/* الأنيميشن */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* تأثيرات الدخول */
+.fade-in { animation: fadeIn 0.8s ease forwards; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+/* تجاوب الشاشات الكبيرة */
+@media (min-width: 768px) {
+  body { align-items: center; }
+  .main-container { max-width: 500px; }
 }
 </style>
 </head>
 <body>
 
-<div class="container">
+<div class="main-container fade-in">
 
-    <!-- الصورة الكبيرة -->
-    <img src="000.jpeg" alt="Zineb Store" class="profile-img">
-
-    <!-- العنوان -->
+  <!-- Header -->
+  <header class="store-header">
+    <div class="logo-wrapper">
+      <img src="000.jpeg" alt="Zineb" class="profile-img">
+    </div>
     <h1>Zineb Store</h1>
-    <p class="subtitle">مرحبا 👋</p>
+    <div class="bio">
+      <span style="color:var(--wa-color)">●</span> متجر رقمي موثوق
+    </div>
+  </header>
 
-    <!-- زر عني مع صورة صغيرة -->
-    <a href="#about" class="about-btn">
-        <img src="000.jpeg" alt="صورة عني">
-        عني
+  <!-- قسم الخدمات (تودي لقناة الواتساب) -->
+  <div class="section-title">
+    <span>📦 خدماتنا (تابع القناة)</span>
+  </div>
+
+  <div class="grid-services">
+    <a href="https://whatsapp.com/channel/0029VbBstWcAYlUMf4DJEH3Z" target="_blank" class="service-card" style="animation-delay: 0.1s">
+      <div class="icon-box">🎮</div>
+      <div class="srv-title">حسابات</div>
+      <div class="srv-sub">تسليم فوري</div>
     </a>
 
-    <!-- روابط التواصل -->
-    <a class="btn link" href="https://www.facebook.com/share/1DJAqDafNk/?mibextid=wwXIfr" target="_blank">
-        <img src="13.webp">
-        فيسبوك
+    <a href="https://whatsapp.com/channel/0029VbBstWcAYlUMf4DJEH3Z" target="_blank" class="service-card" style="animation-delay: 0.2s">
+      <div class="icon-box">💎</div>
+      <div class="srv-title">شحن ألعاب</div>
+      <div class="srv-sub">جميع الألعاب</div>
     </a>
 
-    <a class="btn link" href="https://www.tiktok.com/@zineb.store.ff?_r=1&_t=ZS-93cz317Vztt" target="_blank">
-        <img src="t.png">
-        تيك توك
+    <a href="https://whatsapp.com/channel/0029VbBstWcAYlUMf4DJEH3Z" target="_blank" class="service-card" style="animation-delay: 0.3s">
+      <div class="icon-box">⚡</div>
+      <div class="srv-title">عروض حصرية</div>
+      <div class="srv-sub">خصومات</div>
     </a>
 
-    <a class="btn link" href="https://wa.me/213563143913?text=مرحبا،%20حاب%20نستفسر%20على%20منتجاتكم" target="_blank">
-        <img src="8.webp">
-        واتساب
+    <a href="https://whatsapp.com/channel/0029VbBstWcAYlUMf4DJEH3Z" target="_blank" class="service-card" style="animation-delay: 0.4s">
+      <div class="icon-box">🚀</div>
+      <div class="srv-title">خدمات رقمية</div>
+      <div class="srv-sub">متعددة</div>
     </a>
+  </div>
 
-    <a class="btn link channel-btn" href="https://whatsapp.com/channel/0029VbBstWcAYlUMf4DJEH3Z" target="_blank">
-        <img src="8.webp">
-        Suivre la chaîne 𝙕𝙞𝙣𝙚𝙚𝙚𝙗 𝙨𝙩𝙤𝙧𝙚 🛍️🛒
-    </a>
+  <!-- قسم السوشيال (في الوسط وبشعارات حقيقية) -->
+  <div class="section-title">
+    <span>📱 تابعنا هنا</span>
+  </div>
 
-    <a class="btn link" href="https://www.instagram.com/z.ineeb.store?igsh=MXE5NWMwYWRwNDFzZQ==" target="_blank">
-        <img src="14.jpg">
-        انستقرام
-    </a>
+  <div class="social-container">
+    <div class="social-grid-center">
+      <!-- واتساب -->
+      <a href="https://wa.me/213563143913?text=مرحبا" target="_blank" class="social-btn-circle btn-wa">
+        <img src="https://cdn.simpleicons.org/whatsapp/FFFFFF" alt="WA">
+      </a>
+      <!-- فيسبوك -->
+      <a href="https://www.facebook.com/share/1DJAqDafNk/?mibextid=wwXIfr" target="_blank" class="social-btn-circle btn-fb">
+        <img src="https://cdn.simpleicons.org/facebook/FFFFFF" alt="FB">
+      </a>
+      <!-- تيك توك -->
+      <a href="https://www.tiktok.com/@zineb.store.ff" target="_blank" class="social-btn-circle btn-tt">
+        <img src="https://cdn.simpleicons.org/tiktok/FFFFFF" alt="TT">
+      </a>
+      <!-- انستقرام -->
+      <a href="https://www.instagram.com/z.ineeb.store" target="_blank" class="social-btn-circle btn-insta">
+        <img src="https://cdn.simpleicons.org/instagram/FFFFFF" alt="IG">
+      </a>
+    </div>
+  </div>
 
-    <!-- قسم عني -->
-    <section id="about">
-        <div class="about-box">
-            <h2>نبذة عني</h2>
-            <p>
-                مرحبا 👋  
-                أنا صاحبة متجر <b>Zineb Store</b>، أقدّم خدمات رقمية باحترافية.
-            </p>
-            <h3>💼 خدماتي:</h3>
-            <ul class="services">
-                <li>✅ بيع وشراء جميع الحسابات</li>
-                <li>✅ شحن جميع الألعاب</li>
-                <li>✅ خدمة رقمية موثوقة</li>
-                <li>✅ دعم سريع عبر الواتساب</li>
-            </ul>
-        </div>
-    </section>
+  <!-- زر قناة واتساب كبير -->
+  <a href="https://whatsapp.com/channel/0029VbBstWcAYlUMf4DJEH3Z" target="_blank" class="btn-channel">
+    <img src="https://cdn.simpleicons.org/whatsapp/FFFFFF" width="24" height="24">
+    <span>انضم لقناة الواتساب</span>
+  </a>
 
-    <footer>
-        © 2026 Zineb Store - All Rights Reserved
-    </footer>
+  <!-- الفوتر -->
+  <footer class="footer-info">
+    <span class="footer-logo">Zineb Store</span>
+    <p>🛡️ جودة وسرعة في التنفيذ</p>
+    <p style="opacity:0.4; font-size:10px; margin-top:5px;">© 2026 All Rights Reserved</p>
+  </footer>
 
 </div>
 
